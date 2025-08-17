@@ -1,28 +1,48 @@
 # Mini Game Project
 # RPG Game where player chooses there actions
-moves = True
 
-    
-while moves == True:
-     print('Player 1')
-     print('Select a move: 1) Punsh. 2) Slash. 3) Kick. 4) Heal.')
-     action = (int(input("What action are you taking.")))
-     if action == 1:
-        print("PUNCH!!!")
-     elif action == 2:
-        print("SLASH!!")
-     elif action == 3:
-         print("KICK!!!")
-     elif action == 4:
-         print("HEAL!!!")
-     else:
-        print('Type a from number 1 - 4')
-     
+moves = ['Punch','Kick','Slash','Heal']
 
 
 
+def player1(x):
+   if x == 1:
+      print(moves[0])
+      player2(int(input('Player 2 Enter your move 1-4! ')))
+   elif x == 2:
+      print(moves[1])
+      player2(int(input('Player 2 Enter your move 1-4! ')))
+   elif x == 3:
+      print(moves[2])
+      player2(int(input('Player 2 Enter your move 1-4! ')))
+   elif x == 4:
+      print(moves[3])
+      player2(int(input('Player 2 Enter your move 1-4! ')))
+   else:
+      print('Wrong Selection!')
+      player1(int(input('Player 1 Enter your move 1-4! ')))
 
-print(moves)
-    
- 
+      
+
+def player2(x):
+   if x == 1:
+      print(moves[0])
+      player1(int(input('Player 1 Enter your move 1-4! ')))
+   elif x == 2:
+      print(moves[1])
+      player2(int(input('Player 1 Enter your move 1-4! ')))
+   elif x == 3:
+      print(moves[2])
+      player2(int(input('Player 1 Enter your move 1-4! ')))
+   elif x == 4:
+      print(moves[3])
+      player2(int(input('Player 1 Enter your move 1-4! ')))
+   else:
+      print('Wrong Selection!')
+      player2(int(input('Player 2 Enter your move 1-4! ')))
+
+
+
+player1(int(input('Player 1 Enter your move 1-4! ')))
+
     
